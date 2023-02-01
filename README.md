@@ -1,3 +1,15 @@
+Conceitos:
+NgRx: faz o gerenciamento de estado na aplicação e fornece estados unicos e ações para fazer essa mudanças.
+
+Ações(Action):Eventos internos ou externos em todo o aplicativo.
+
+Redutores(reducer): reponsaveis pela transição de um estado para outro.
+
+Seletores(Selector): funções para pegar o estado.
+
+Efeitos(efects): efeitos usam fluxos para fornencer novas fontes de ações para reduzir o estado com base em interações externas.(Como solicitações de rede).
+
+
 # ReduxAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
