@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListarUsuariosComponent } from './listar-usuarios/listar-usuarios.component';
 import { MainComponent } from './main/main.component';
+import { CadastroUsuariosComponent } from './cadastro-usuarios/cadastro-usuarios.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarUsuariosComponent,
-    MainComponent
+    MainComponent,
+    CadastroUsuariosComponent
   ],
   imports: [
     BrowserModule,
