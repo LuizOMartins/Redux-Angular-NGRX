@@ -1,6 +1,6 @@
 import { ActionReducerMap } from '@ngrx/store';
-import { UsuariosState, usuariosReducer } from './usuarios.reducer';
-import { UsuariosEffects } from './usuarios.effects';
+import { UsuariosState, usuariosReducer } from './usuarios/usuarios.reducer';
+import { UsuariosEffects } from './usuarios/usuarios.effects';
 
 export interface AppState {
   usuarios: UsuariosState;

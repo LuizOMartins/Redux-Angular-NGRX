@@ -2,7 +2,7 @@ Ambiente:
 
 Angular: 15.0.0
 
-Rodar aplicação com: 
+Rodar aplicação com: npm start 
 ______________________________
 
 Conceitos:

@@ -1,3 +1,4 @@
+import { UsuarioModel } from './../../Models/UsuarioModel';
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { UsuarioService } from './../../Repository/UsuarioService';
@@ -46,7 +47,7 @@ export class UsuariosEffects {
           exhaustMap((record: any)=> this.usuarioService.addUsuario(record.payload)
             .pipe(
               map(payload =>
-                fromUsuariosAction.CreateUsuarioSuccess({ payload }),
+                fromUsuariosAction.CreateUsuarioSuccess({  payload }),
                 catchError(error => of(fromUsuariosAction.CreateUsuarioFail({error})))
               )
             )

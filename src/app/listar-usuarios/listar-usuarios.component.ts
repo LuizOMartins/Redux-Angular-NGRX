@@ -1,24 +1,18 @@
 import { UsuarioModel } from './../Models/UsuarioModel';
-
+import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from '../Repository/UsuarioService';
-
+import { AppState } from '../Store/app-state';
+import * as fromUsuariosAction from '../Store/usuarios/usuario.actions';
 @Component({
   selector: 'app-listar-usuarios',
   templateUrl: './listar-usuarios.component.html',
-  styleUrls: ['./listar-usuarios.component.css']
+  styleUrls: ['./listar-usuarios.component.css'],
 })
 export class ListarUsuariosComponent implements OnInit {
   listaUsuarios: UsuarioModel[] = [];
-
-
-  constructor(private usuarioService: UsuarioService){
-  }
+  constructor(private store: Store<AppState>) {}
 
   ngOnInit(): void {
-      this.usuarioService.getUsuarios().subscribe((usuarios: UsuarioModel[]) =>{
-        this.listaUsuarios = usuarios;
-      });
+    this.store.dispatch(fromUsuariosAction.LoadUsuarios());
   }
-
 }

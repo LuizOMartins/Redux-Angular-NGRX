@@ -10,7 +10,7 @@ import { MainComponent } from './main/main.component';
 import { CadastroUsuariosComponent } from './cadastro-usuarios/cadastro-usuarios.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { appEffects, appReducer } from './Store/usuarios/app-state';
+import { appEffects, appReducer } from './Store/app-state';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
