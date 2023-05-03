@@ -17,6 +17,11 @@ Seletores(Selector): funções para pegar o estado.
 Efeitos(efects): efeitos usam fluxos para fornencer novas fontes de ações para reduzir o estado com base em interações externas.(Como solicitações de rede).
 
 
+Anotações:
+dispatch: dispara uma ação.
+
+
+
 # ReduxAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
