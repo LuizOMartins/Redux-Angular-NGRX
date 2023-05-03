@@ -1,4 +1,4 @@
-import { Action, createReducer, on } from '@ngrx/store'
+import { Action, createReducer, on, createSelector, createFeatureSelector } from '@ngrx/store'
 import { UsuarioModel } from './../../Models/UsuarioModel';
 import * as  fromUsuariosAction from "../usuarios/usuario.actions"
 // Model do Estado para Usuario
@@ -81,3 +81,26 @@ export function usuariosReducer(state =  initialState, action: Action){
   return _usuariosReducer(state, action);
 }
 
+const getUsuariosFeatureState = createFeatureSelector<UsuariosState>(
+  'usuarios'
+)
+
+export const getUsuarios = createSelector(
+  getUsuariosFeatureState,
+  (state: UsuariosState) => state.usuarios
+)
+
+export const getUsuario = createSelector(
+  getUsuariosFeatureState,
+  (state: UsuariosState) => state.usuario
+)
+
+export const getUsuarioErro = createSelector(
+  getUsuariosFeatureState,
+  (state: UsuariosState) => state.error
+)
+
+export const getUsuariosAdministradores = createSelector(
+  getUsuariosFeatureState,
+  (state: UsuariosState) => state.usuarios.filter((filter)=> filter.perfil === 'Administrador')
+)
