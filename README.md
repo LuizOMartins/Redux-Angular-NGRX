@@ -1,3 +1,10 @@
+Ambiente:
+
+Angular: 15.0.0
+
+Rodar aplicação com: 
+______________________________
+
 Conceitos:
 NgRx: faz o gerenciamento de estado na aplicação e fornece estados unicos e ações para fazer essa mudanças.
 
