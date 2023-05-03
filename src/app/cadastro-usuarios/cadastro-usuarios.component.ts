@@ -1,6 +1,8 @@
 import { UsuarioModel } from './../Models/UsuarioModel';
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from '../Repository/UsuarioService';
+import * as fromUsuariosAction from '../Store/usuarios/usuario.actions';
+import { Store } from '@ngrx/store';
+import { AppState } from '../Store/app-state';
 
 @Component({
   selector: 'app-cadastro-usuarios',
@@ -15,14 +17,16 @@ export class CadastroUsuariosComponent implements OnInit {
     perfil: '',
   };
 
-  constructor(private usuarioServide: UsuarioService) {}
+  constructor(private store: Store<AppState>) {}
 
   ngOnInit() {}
 
   addUsuario() {
-    if(this.model.id == 0){
-      this.usuarioServide.addUsuario(this.model).subscribe();
-    }else{
+    if (this.model.id == 0) {
+      this.store.dispatch(
+        fromUsuariosAction.CreateUsuario({ payload: this.model })
+      );
+    } else {
       //atualizar
     }
   }
