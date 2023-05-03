@@ -11,6 +11,7 @@ import { CadastroUsuariosComponent } from './cadastro-usuarios/cadastro-usuarios
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { appEffects, appReducer } from './Store/usuarios/app-state';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { appEffects, appReducer } from './Store/usuarios/app-state';
     FormsModule,
     StoreModule.forRoot(appReducer),
     EffectsModule.forRoot(appEffects),
-    Store
+    StoreDevtoolsModule.instrument()
   ],
   providers: [],
   bootstrap: [AppComponent]
