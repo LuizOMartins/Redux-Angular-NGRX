@@ -16,9 +16,18 @@ export class ListarUsuariosComponent implements OnInit {
     fromUsuariosSelector.getUsuarios
   );
 
+  usuario$: Observable<UsuarioModel | null> = this.store.select(
+    fromUsuariosSelector.getUsuario
+  );
+
   constructor(private store: Store<AppState>) {}
 
   ngOnInit(): void {
     this.store.dispatch(fromUsuariosAction.LoadUsuarios());
+  }
+
+  editarUsuario(id: number){
+    this.store.dispatch(fromUsuariosAction.LoadUsuario({payload :id}));
+
   }
 }
